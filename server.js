@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var routes = require('./api/config/router');
 var app = express();
 var PORT = process.env.PORT || 3000;
-var MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/sg-webdev4-project3';
+var MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/sg-project-3';
 
 mongoose.connect(MONGODB_URI, function (err) {
   if (err) {
@@ -22,11 +22,12 @@ app.use(function (req, res, next) {
 });
 
 // app.use(cors());
-app.use(express.static('node_modules'));
+app.use(express.static('node_modules')); // looks straight into the node modules
 app.use(express.static('frontend'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(routes);
+
 
 app.listen(PORT, function() {
   console.log('App is running on port', PORT);
