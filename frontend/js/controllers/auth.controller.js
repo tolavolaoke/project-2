@@ -1,15 +1,21 @@
 function AuthController($state, AuthFactory) {
   var controller = this;
 
-// this is a shorter way of writing a
+  function resetCredentials(){
+    controller.email = null;
+    controller.pasword = null;
+  }
+
+
   controller.createUser = function (){
     controller.error = null;
     AuthFactory.$createUserWithEmailAndPassword(controller.email, controller.password).then(
       (firebaseUser) => { //arrow function just missing the word function before (firebaseUser)
         console.log('firebaseUser:', firebaseUser);
         resetCredentials();
-        $state.go('secret');
+        $state.go('home');
       },
+
       (error) => { //another arrow function
         controller.error = error; //this error varibale is available onto thhe controller
         console.warn('could not create user with email or password:', error);
@@ -19,9 +25,14 @@ function AuthController($state, AuthFactory) {
   };
 
 // SIGN IN
-  controller.signIn = () =>{
+  controller.signIn = () => {
     controller.error = null;
     AuthFactory.$signInWithEmailAndPassword(controller.email, controller.password).then(
+      () => {
+        resetCredentials();
+        $state.go('home');
+      },
+
     (error) => { //another arrow function
       controller.error = error; //this error varibale is available onto the controller
       console.warn('could not create user with email or password:', error);
@@ -37,11 +48,6 @@ function AuthController($state, AuthFactory) {
   };
 
 
-
-  function resetCredentials(){
-    controller.email = null;
-    controller.pasword = null;
-  }
 
   function init() {
     controller.user = null;

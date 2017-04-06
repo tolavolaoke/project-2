@@ -1,26 +1,24 @@
-// function RelativeController($state, $stateParams, RelativeFactory) {
-  function RelativeController() {
-    var controller = this;
+function RelativeController(RelativeFactory) {
+  var controller = this;
 
-
-    function init() {
-      console.log(controller);
-      controller.Relatives = ['mum','dad','sister'];
-
-      //
-      // RelativeFactory.getAll().then(
-      // function success(response) {
-      //   controller.allRelatives = response.data;
-      // },
-      // function error(error) {
-      //   console.log('Error getting Relatives:', error);
-      // }
-    // );
-    }
-    init();
+  function init() {
+    console.log('RelativeController:', controller);
+    RelativeFactory.getAll().then(
+      function success(response) {
+        controller.allRelatives = response.data;
+        console.log('Got Relatives', controller.allRelatives);
+      },
+      function error(error) {
+        console.warn('Could not get relatives', error);
+      }
+    );
   }
 
+  init();
+}
 
-  angular
+RelativeController.$inject = ['RelativeFactory'];
+
+angular
   .module('FamilyTreeApp')
   .controller('RelativeController', RelativeController);

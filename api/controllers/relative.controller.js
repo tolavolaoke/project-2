@@ -1,9 +1,14 @@
-function UserController() {
-  var controller = this;
+var Relative = require('../models/relative.model');
 
+function getAll(request, response) {
+  Relative.find(function(error, relatives) {
+    if(error) {
+      return response.json({ message: 'could not find any relatives' });
+    }
+    response.json(relatives);
+  });
+}
 
-
-
-angular
-  .module('FamilyTreeApp')
-  .controller('UserController', UserController);
+module.exports = {
+  getAll: getAll
+};

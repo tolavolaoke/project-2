@@ -2,7 +2,7 @@ var express = require('express');
 // var cors = require('cors');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var routes = require('./api/config/router');
+var router = require('./api/config/router');
 var app = express();
 var PORT = process.env.PORT || 3000;
 var MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/sg-project-3';
@@ -26,8 +26,7 @@ app.use(express.static('node_modules')); // looks straight into the node modules
 app.use(express.static('frontend'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(routes);
-
+app.use(router);
 
 app.listen(PORT, function() {
   console.log('App is running on port', PORT);

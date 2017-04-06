@@ -1,12 +1,14 @@
-function RelativeFactory(API_URL, $http) {
+function RelativeFactory($http) {
   return {
     getAll: function() {
       return $http({
         method: 'GET',
-        url: `${API_URL}/home`
+        url: `/api/relatives`
       });
-    },
-
+    }
+  };
+}
+RelativeFactory.$inject = ['$http'];
 
 angular
   .module('FamilyTreeApp')

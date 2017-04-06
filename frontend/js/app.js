@@ -1,6 +1,8 @@
 // specifying and mapping a route aka state in the URL and an actual state
 
-function MainRouter ($stateProvider, $urlRouterProvider, AuthFactory) {
+function MainRouter ($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise('/');
+
 
   $stateProvider
     .state('home', {
@@ -18,10 +20,19 @@ function MainRouter ($stateProvider, $urlRouterProvider, AuthFactory) {
     .state('authRequired', {
       url: '/authrequired',
       templateUrl: '/states/authRequired.html'
+    })
+    .state('relatives', {
+      url: '/relatives',
+      templateUrl: '/states/relatives.html',
+      resolve: {
+        currentAuth: [
+          'AuthFactory',
+          (AuthFactory) => {
+            return AuthFactory.$requireSignIn();
+          }
+        ]
+      }
     });
-
-  $urlRouterProvider.otherwise('/');
-
 }
 
 
@@ -31,17 +42,15 @@ function AuthCatcher($rootScope, $state) { //auth catcher if authotrised to view
 
   $rootScope.$on('$stateChangeError', (event, toState, toParams, fromState, fromParams, error) => {
     if (error === 'AUTH_REQUIRED') {
-      $state.go('auth-required');
+      $state.go('authRequired');
     }
   });
 }
-AuthCatcher.$inject = ['$rootScope', '$scope'];
 
-
+AuthCatcher.$inject = ['$rootScope', '$state'];
 
 
 angular
   .module('FamilyTreeApp', ['ui.router', 'firebase'])
-  // .constant('API_URL', 'http://localhost:3000')
   .config(MainRouter)
   .run(AuthCatcher);
