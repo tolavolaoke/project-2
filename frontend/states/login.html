@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<h2>LogIn</h2>
+<h2>Log In</h2>
 
 <section class="login" ng-if="!auth.user">
   <div>
@@ -14,7 +14,7 @@
   <button ng-click="auth.signIn()">Sign In</button>
 
   <p ng-if="auth.error">
-    Error: <strong>{{ auth.error }}</strong>
+    <strong>{{ auth.error }}</strong>
   </p>
 </section>
 

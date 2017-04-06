@@ -1,1 +1,26 @@
 <!DOCTYPE html>
+<h2>Sign Up</h2>
+
+<section class="signup" ng-if="!auth.user">
+
+  <div>
+    Email: <input type="text" ng-model="auth.email">
+  </div>
+
+  <div>
+    Password: <input type="password" ng-model="auth.password">
+  </div>
+
+  <br>
+
+  <button ng-click="auth.createUser()">Create User</button>
+
+  <p ng-if="auth.error">
+    <strong>{{ auth.error }}</strong> <!-- Displays the error message from the  -->
+  </p>
+
+</section>
+
+<section ng-if="auth.user">
+  <p>You are already logged in.</p>
+</section>
