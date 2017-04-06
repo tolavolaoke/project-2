@@ -9,6 +9,16 @@ function getAll(request, response) {
   });
 }
 
+// POST
+function createRelative(request, response) {
+  var relative = new Relative(request.body);
+  relative.save(function(error) {
+    if (error) return response.json(error);
+    response.json({relative: relative});
+  });
+}
+
 module.exports = {
-  getAll: getAll
+  getAll: getAll,
+  createRelative: createRelative
 };

@@ -2,6 +2,63 @@
 
 <h2>Create a Relative</h2>
 
-<form class="" action="index.html" method="post">
+
+<form ng-submit="relative.addRelative()">
+
+<div>
+  <label for="new-relative-firstname">Firstname:</label>
+  <input
+    type="text"
+    id="new-relative-firstname"
+    placeholder="Relatives firstname"
+    ng-model="relative.newRelative.firstname">
+</div>
+
+<div>
+  <label for="new-relative-surname">Surname:</label>
+  <input
+    type="text"
+    id="new-relative-surname"
+    placeholder="Relatives surname"
+    ng-model="relative.newRelative.surname">
+</div>
+
+<div>
+  <label for="new-relative-relation">Relation:</label>
+  <input
+    type="text"
+    id="new-relative-relation"
+    placeholder="Relative relation"
+    ng-model="relative.newRelative.relation">
+</div>
+
+<!-- <div>
+  <label for="new-relative-location">Location:</label>
+  <input
+    type="text"
+    id="new-relative-location"
+    placeholder="Relative location"
+    ng-model="relative.newRelative.location">
+</div> -->
+
+
+
+<div>
+  <label for="new-relative-location">Location</label>
+
+  <select id="new-relative-location" ng-model="relative.newRelative.loaction">
+
+    <option
+      ng-repeat="option in relative.locations"
+      value="{{ option }}">{{ option }}
+    </option>
+
+  </select>
+</div>
+
+
+<div>
+  <input type="submit" value="Add Relative">
+</div>
 
 </form>

@@ -5,9 +5,24 @@ function RelativeFactory($http) {
         method: 'GET',
         url: `/api/relatives`
       });
+    },
+
+    createOne: function (newRelative) {
+      return $http({
+        method: 'POST',
+        url: `/relatives`,
+        data: newRelative
+      });
     }
+
   };
 }
+
+
+
+
+
+
 RelativeFactory.$inject = ['$http'];
 
 angular

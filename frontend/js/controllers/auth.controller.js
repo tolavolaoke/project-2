@@ -1,7 +1,10 @@
+// This is for the LOG IN and SIGN UP forms
+
 function AuthController($state, AuthFactory) {
   var controller = this;
 
   function resetCredentials(){
+    // controller.name = null;
     controller.email = null;
     controller.pasword = null;
   }
@@ -52,6 +55,7 @@ function AuthController($state, AuthFactory) {
   function init() {
     controller.user = null;
     controller.error = null;
+    // controller.name = '';
     controller.email = '';
     controller.password = '';
     AuthFactory.$onAuthStateChanged(function (user) {

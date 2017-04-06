@@ -1,5 +1,18 @@
-function RelativeController(RelativeFactory) {
+function RelativeController($state, RelativeFactory) {
   var controller = this;
+
+  controller.addRelative = function() {
+    console.log('addRelative()');
+    RelativeFactory.createOne(controller.newRelative).then(
+        function sucess(response) {
+          console.log('Created new relative:', response);
+          $state.go('create');
+        },
+        function error(error) {
+          console.warn('Error creating relative:', error);
+        }
+      );
+  };
 
   function init() {
     console.log('RelativeController:', controller);
@@ -17,7 +30,11 @@ function RelativeController(RelativeFactory) {
   init();
 }
 
-RelativeController.$inject = ['RelativeFactory'];
+
+
+
+
+RelativeController.$inject = ['$state', 'RelativeFactory'];
 
 angular
   .module('FamilyTreeApp')

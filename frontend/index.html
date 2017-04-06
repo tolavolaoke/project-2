@@ -38,7 +38,7 @@
 
   <div ng-if="auth.user">
     <p><strong>
-        	Welcome {{ auth.user.email }}!, remember to keep our secrets a secret!
+        	Welcome {{ auth.user.email }}!
     </strong> </p>
     <p>
     <a href="#" ng-click="auth.signOut()">Sign out</a>
@@ -46,7 +46,7 @@
   </div>
 
   <div ng-if="!auth.user">
-    <p>Welcome new person!!</p>
+    <p>Welcome new person!</p>
     <a ui-sref="login">Click Here</a> to log in.
     <br>
     <a ui-sref="signup">Click Here</a> to sign up.

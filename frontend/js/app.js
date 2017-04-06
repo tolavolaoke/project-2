@@ -17,6 +17,10 @@ function MainRouter ($stateProvider, $urlRouterProvider) {
       url: '/login',
       templateUrl: '/states/login.html'
     })
+    .state('create', { //To create a relative
+      url: '/create',
+      templateUrl: '/states/create.html'
+    })
     .state('authRequired', {
       url: '/authrequired',
       templateUrl: '/states/authRequired.html'
