@@ -1,1 +1,46 @@
 <!DOCTYPE html>
+
+<h2>Edit Relative</h2>
+
+<section ng-init="relative.getRelative()">
+
+  <form ng-submit="relative.updateRelative">
+
+     <div>
+      <label for="new-relative-firstname">Firstname:</label>
+      <input
+        type="text"
+        id="new-relative-firstname"
+        placeholder="Enter the relatives firstname"
+        ng-model="relative.newRelative.firstname">
+    </div>
+
+    <br>
+
+    <div>
+      <label for="new-relative-surname">Surname:</label>
+      <input
+        type="text"
+        id="new-relative-surname"
+        placeholder="Enter the relatives surname"
+        ng-model="relative.newRelative.surname">
+    </div>
+
+    <br>
+
+    <div>
+      <label for="new-relative-relation">Relation:</label>
+      <input
+        type="text"
+        id="new-relative-relation"
+        placeholder="Enter the relatives relation"
+        ng-model="relative.newRelative.relation">
+    </div>
+
+    <div>
+    <input type="submit" value="Update Relative">
+    </div>
+
+  </form>
+
+</section>

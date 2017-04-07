@@ -21,6 +21,14 @@ function MainRouter ($stateProvider, $urlRouterProvider) {
       url: '/create',
       templateUrl: '/states/create.html'
     })
+    // .state('show', {
+    //   url: '/show',
+    //   templateUrl: '/states/show.html'
+    // })
+    .state('edit', {
+      url: '/edit',
+      templateUrl: '/states/edit.html'
+    })
     .state('authRequired', {
       url: '/authrequired',
       templateUrl: '/states/authRequired.html'
