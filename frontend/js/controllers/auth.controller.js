@@ -1,6 +1,6 @@
 // This is for the LOG IN and SIGN UP forms
 
-function AuthController($state, AuthFactory) {
+function AuthController($state, UserFactory, AuthFactory) {
   var controller = this;
 
   function resetCredentials(){
@@ -16,7 +16,15 @@ function AuthController($state, AuthFactory) {
       (firebaseUser) => { //arrow function just missing the word function before (firebaseUser)
         console.log('firebaseUser:', firebaseUser);
         resetCredentials();
-        $state.go('home');
+        UserFactory.createOne(firebaseUser.uid).then(
+  (success) => {
+    console.log('created user from model', success.data);
+  },
+  (error) =>{
+    console.warn('could not create user from model', error);
+  }
+);
+        $state.go('home', {firebaseUserId: firebaseUser.uid});
       },
 
       (error) => { //another arrow function
@@ -67,7 +75,7 @@ function AuthController($state, AuthFactory) {
   init();
 }
 
-AuthController.$inject = ['$state', 'AuthFactory'];
+AuthController.$inject = ['$state', 'UserFactory', 'AuthFactory'];
 
 angular
   .module('FamilyTreeApp')

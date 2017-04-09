@@ -6,7 +6,7 @@ function MainRouter ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
     .state('home', {
-      url: '/',
+      url: '/:firebaseUserId',
       templateUrl: '/states/home.html'
     })
     .state('signup', {

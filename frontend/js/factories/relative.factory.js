@@ -36,8 +36,6 @@ function RelativeFactory($http) {
 
 
 
-
-
 RelativeFactory.$inject = ['$http'];
 
 angular

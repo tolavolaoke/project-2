@@ -1,3 +1,6 @@
+// we are passing a parameter called Relativefactory to the duckcontroller
+// put in the function 'RelativeController ()' whatever needs to be defined
+
 function RelativeController($state, $stateParams, RelativeFactory) {
   var controller = this;
 
@@ -53,7 +56,7 @@ function RelativeController($state, $stateParams, RelativeFactory) {
     controller.selectedRelative = undefined;
     controller.allRelatives = [];
     controller.newRelative = {};
-
+    // controller.countries = ['usa', 'uk', 'dubai'];
     RelativeFactory.getAll().then(
       function success(response) {
         controller.allRelatives = response.data;
@@ -67,6 +70,8 @@ function RelativeController($state, $stateParams, RelativeFactory) {
 
   init();
 }
+
+
 
 
 

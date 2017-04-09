@@ -1,51 +1,40 @@
 <!DOCTYPE html>
 
-<h2>All Relatives</h2>
-
-
-
-  <ul>
+<br>
+<br>
+<ul>
     <li ng-repeat="relative in relative.allRelatives" >
-      <p><strong>Relatives: </strong></p>
     </li>
-  </ul>
+
+</ul>
+
+<div ng-if="auth.user">
+
+<h2>All Relatives: </h2>
+
+      <p>To get started click on</p>
+    <a ui-sref="create"><button>Create Relative</button></a>
+
+    <a ui-sref="edit"><button>Edit Relative</button></a>
+</div>
 
 
-  <div>
 
-          To get started click on
-          <a ui-sref="create"><button>Create Relative</button></a>
-
-          <a ui-sref="edit"><button>Edit Relative</button></a>
-
-  </div>
 
   <ul>
-    <li class="relative" ng-repeat="d in relative.allRelatives">
+    <li class="relative" ng-repeat="relative in relative.allRelatives">
       <div>
         <span>Name: </span>
-        <a ui-sref="show({relativeId: item._id})">{{ item.firstname }}</a>
+        <a ui-sref="show({relativeId: relative._id})">{{ relative.firstName }}</a>
 
         <button
         type="button"
-        ng-click="relative.editRelative(item._id)">edit relative</button>
+        ng-click="relative.editRelative(relative._id)">edit relative</button>
 
         <button
         type="button"
-        ng-click="relative.deleteRelative(item._id)">delete relative</button>
+        ng-click="relative.deleteRelative(relative._id)">delete relative</button>
 
       </div>
     </li>
   </ul>
-
-
-
-
-  <!-- <ol>
-  <li ng-repeat="item in todo.allTodos | completeStatus:false">
-    <input type="checkbox" ng-click="todo.updateTodoCompleteStatus(item._id, true)">
-    <a ui-sref="show({todoId: item._id})">{{ item.title }}</a>
-    <button type="button" ng-click="todo.editTodo(item._id)">Edit</button>
-    <button type="button" ng-click="todo.deleteTodo(item._id)">Delete</button>
-  </li>
-</ol> -->

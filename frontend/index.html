@@ -4,6 +4,7 @@
     <!-- STYLESHEETS -->
   <link rel="stylesheet" href="/css/style.css">
 
+
     <!-- META DATA -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,9 +20,12 @@
 
   <!-- Google Maps API -->
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_HERE"></script> -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+    async defer></script> -->
 
     <!-- JS FILES -->
   <script src="/js/app.js" charset="utf-8"></script>
+  <script src="/js/factories/user.factory.js" charset="utf-8"></script>
   <script src="/js/factories/auth.factory.js" charset="utf-8"></script>
   <script src="/js/factories/relative.factory.js" charset="utf-8"></script>
   <script src="/js/controllers/auth.controller.js" charset="utf-8"></script>
@@ -49,9 +53,9 @@
 
   <div ng-if="!auth.user">
     <p>Welcome new person!</p>
-    <a ui-sref="login">Click Here</a> to log in.
-    <br>
-    <a ui-sref="signup">Click Here</a> to sign up.
+    <a ui-sref="login">Login</a>
+
+    <a ui-sref="signup">Signup</a>
   </div>
 
 

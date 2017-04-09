@@ -1,13 +1,6 @@
-*{
-  font-family: Roboto, sans-serif;
+.btn{
+  padding: 15px 30px;
+  border: none;
+  background: white;
+  color: $blue;
 }
-
-
-
-https://getmdl.io/
-
-https://codepen.io/faizanrupani/pen/QjzMJp
-
-https://codepen.io/faizanrupani/pen/jbXPxp
-
-https://codepen.io/Jackthomsonn/pen/jWyGvX

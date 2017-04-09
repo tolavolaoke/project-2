@@ -9,7 +9,7 @@ function getAll(request, response) {
   });
 }
 
-// POST
+// POST - CREATE
 function createRelative(request, response) {
   var relative = new Relative(request.body);
   relative.save(function(error) {
@@ -60,6 +60,6 @@ function updateRelative(request, response) {
 module.exports = {
   getAll: getAll,
   createRelative: createRelative,
-  updateRelative: updateRelative,
-  getRelative: getRelative
+  getRelative: getRelative,
+  updateRelative: updateRelative
 };
