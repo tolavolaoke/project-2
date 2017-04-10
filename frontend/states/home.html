@@ -9,11 +9,20 @@
 
 </ul>
 
+
+<!---Displays the Relative and Objetcs------------------------------------->
 <div ng-if="auth.user">
 
 <h2>All Relatives: </h2>
-
-      <p>To get started click on</p>
+<ul>
+  <li ng-repeat="relative in user.relatives">
+    <p><strong>First name:</strong></p>{{ relative.firstName }}
+    <p><strong>Last name: </strong></p>{{ relative.lastName }}
+    <p><strong>Relation: </strong></p>{{ relative.relation }}
+    <p><strong>Location: </strong></p>{{ relative.location }}
+  </li>
+</ul>
+      <p>Instructions:</p>
     <!-- <a ui-sref="create({ firebaseUserId: auth.firebaseUserId })">
       <button>Create Relative</button></a>
 
@@ -41,43 +50,41 @@
     </li>
   </ul>
 
-
-
   <!---Create Relative Form-------------------------------------------------->
   <section ng-controller="UserController as user">
     <form ng-if="auth.user">
-      <label
-       for="firstName"> First name: </label>
+      <!-- <label
+       for="firstName"> First name: </label> -->
       <input
       type="text"
       ng-model="user.relativeFirstName"
-      placeholder="First name">
+      placeholder="Enter your relatives First name here">
 
       <br>
-      <label
-       for="lastName"> Last name: </label>
+      <!-- <label
+       for="lastName"> Last name: </label> -->
       <input
       type="text"
       ng-model="user.relativeLastName"
-      placeholder="Last name">
+      placeholder="Enter your relatives Last name here">
 
       <br>
-      <label
-       for="Relation"> Relation: </label>
+      <!-- <label
+       for="Relation"> Relation: </label> -->
       <select
       type="text"
       ng-model="user.relation"
       ng-options="option for option in user.relativeOptions"
-      placeholder="relation">
+      placeholder="Enter your relatives relation here">
       </select>
 
       <br>
-     <label
-      for="Location"> Location: </label>
+     <!-- <label
+      for="Location"> Location: </label> -->
       <input
       type="text" gm-places-autocomplete
       ng-model="user.autocomplete" style="width: 300px;"
-      placeholder="Location"/>
+      placeholder="Enter your relatives Location here"/>
 
       <br>
       <button
@@ -85,11 +92,10 @@
       ng-click="user.addRelative()">Create Relative</button>
     </form>
 
+      <br>
+
+<!---Displays Google Map------------------------------------------------------>
     <ui-gmap-google-map center="user.map.center" zoom="user.map.zoom"></ui-gmap-google-map>
   </section>
-
-
-
-
 
 </section>

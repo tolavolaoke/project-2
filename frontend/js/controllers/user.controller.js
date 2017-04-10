@@ -14,6 +14,7 @@ function UserController($stateParams, UserFactory, $scope) {
     UserFactory.addRelative($stateParams.firebaseUserId, controller.relatives).then(
       (success) => {
         console.log('success:', success);
+        console.log(controller.relatives);
       },
       (error) => {
         console.warn('error:', error);
