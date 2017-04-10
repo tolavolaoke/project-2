@@ -34,6 +34,18 @@ function UserController($stateParams, UserFactory, $scope) {
     );
   };
 
+  controller.getSavedRelatives = () => {
+    UserFactory.getSavedRelatives($stateParams.firebaseUserId).then(
+      (success) => {
+        controller.relatives = success.data.relatives;
+        console.log('Got saved relatives', success.data.relatives);
+      },
+      (error) => {
+        console.warn('Could not get saved relatives', error);
+      }
+    );
+  };
+
   $scope.$on('gmPlacesAutocomplete::placeChanged', () => {
     var location = controller.autocomplete.getPlace().geometry.location;
     controller.lat = location.lat();
@@ -42,6 +54,7 @@ function UserController($stateParams, UserFactory, $scope) {
 
     $scope.$apply();
   });
+
 
 
   function init() {

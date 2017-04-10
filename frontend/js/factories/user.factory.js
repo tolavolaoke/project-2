@@ -8,7 +8,7 @@ function UserFactory($http) {
         headers: {firebaseUserId: firebaseUserId }
       });
     },
-    
+
     getUser: function(firebaseUserId) {
       return $http({
         method: 'GET',
@@ -21,6 +21,13 @@ function UserFactory($http) {
         method: 'PATCH',
         url: `/users/${firebaseUserId}`,
         data: relatives
+      });
+    },
+
+    getSavedRelatives: function(firebaseUserId) {
+      return $http({
+        method: 'GET',
+        url: `/users/${firebaseUserId}/saved-relatives`
       });
     }
 

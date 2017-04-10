@@ -13,5 +13,6 @@ router.post('/users', userController.createUser);
 router.patch('/users/:firebaseUserId', userController.updateRelatives);
 
 router.get('/users/:firebaseUserId', userController.getUser);
+router.get('/users/:firebaseUserId/saved-relatives', userController.getSavedRelatives);
 
 module.exports = router;

@@ -19,9 +19,9 @@ function getUser(req, res) {
   });
 }
 
-function getRelatives(req, res) {
-  var userId = req.params.userId;
-  User.findOne({ firebaseUserId: userId }, function(error, user) {
+function getSavedRelatives(req, res) {
+  var firebaseUserId = req.params.firebaseUserId;
+  User.findOne({ firebaseUserId: firebaseUserId }, function(error, user) {
     if(error) return res.json(error);
     res.json({ relatives: user.relatives });
   });
@@ -44,5 +44,5 @@ module. exports = {
   createUser: createUser,
   updateRelatives: updateRelatives,
   getUser: getUser,
-  getRelatives: getRelatives
+  getSavedRelatives: getSavedRelatives
 };
