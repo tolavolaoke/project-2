@@ -20,9 +20,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-simple-logger/0.1.7/angular-simple-logger.min.js"></script>
   <script src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
-  <script src="angular-google-maps/dist/angular-google-maps.min.js"></script>
 
   <script src="http://jvandemo.github.io/angularjs-google-maps/dist/angularjs-google-maps.js"></script>
+  <script src="angular-google-maps/dist/angular-google-maps.min.js"></script>
 
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script> -->
 
@@ -53,15 +53,15 @@
         	Welcome {{ auth.user.email }}!
     </strong> </p>
     <p>
-    <a href="#" ng-click="auth.signOut()">Sign out</a>
+    <button><a href="#" ng-click="auth.signOut()">Sign out</a></button>
     </p>
   </div>
 
   <div ng-if="!auth.user">
     <p>Welcome new person!</p>
-    <a ui-sref="login">Login</a>
+    <button><a ui-sref="login">Login</a></button>
 
-    <a ui-sref="signup">Signup</a>
+    <button><a ui-sref="signup">Signup</a></button>
   </div>
 
 
