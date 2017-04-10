@@ -1,11 +1,13 @@
-function UserController($stateParams, UserFactory) {
+function UserController($stateParams, UserFactory, $scope) {
   var controller = this;
 
   controller.addRelative = () => {
     controller.newRelative = {
       firstName: controller.relativeFirstName,
       lastName: controller.relativeLastName,
-      relation: controller.relation
+      relation: controller.relation,
+      lat: controller.lat,
+      lng: controller.lng
     };
 
     controller.relatives.push(controller.newRelative);
@@ -32,16 +34,27 @@ function UserController($stateParams, UserFactory) {
     );
   };
 
+  $scope.$on('gmPlacesAutocomplete::placeChanged', () => {
+    var location = controller.autocomplete.getPlace().geometry.location;
+    controller.lat = location.lat();
+    controller.lng = location.lng();
+    console.log(controller.lat, controller.lng);
+
+    $scope.$apply();
+  });
 
   function init() {
     controller.relatives = [];
+    controller.relativeOptions = ['brother', 'sister', 'mum', 'dad', 'stepdad', 'step great grandmother'];
+    controller.lat = undefined;
+    controller.lng = undefined;
   }
 
   init();
 
 }
 
-UserController.$inject = ['$stateParams', 'UserFactory'];
+UserController.$inject = ['$stateParams', 'UserFactory', '$scope'];
 
 angular
   .module('FamilyTreeApp')
