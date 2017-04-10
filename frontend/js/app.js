@@ -63,6 +63,6 @@ AuthCatcher.$inject = ['$rootScope', '$state'];
 
 
 angular
-  .module('FamilyTreeApp', ['ui.router', 'firebase', 'gm'])
+  .module('FamilyTreeApp', ['ui.router', 'firebase', 'uiGmapgoogle-maps'])
   .config(MainRouter)
   .run(AuthCatcher);

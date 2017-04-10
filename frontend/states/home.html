@@ -42,18 +42,19 @@
   </ul>
 
 
+
   <!---Create Relative Form-------------------------------------------------->
   <section ng-controller="UserController as user">
     <form ng-if="auth.user">
       <input
       type="text"
       ng-model="user.relativeFirstName"
-      placeholder="first name">
+      placeholder="First name">
 
       <input
       type="text"
       ng-model="user.relativeLastName"
-      placeholder="last name">
+      placeholder="Last name">
 
       <select
       type="text"
@@ -62,17 +63,25 @@
       placeholder="relation">
       </select>
  
-      <label
-      for="repeatSelect"> Location: </label>
+      <!-- <label
+      for="repeatSelect"> Location: </label> -->
+
       <input
-      type="text" gm-places-autocomplete  ng-model="user.autocomplete" style="width: 300px;"/>
+      type="text" gm-places-autocomplete
+      ng-model="user.autocomplete" style="width: 300px;"
+      placeholder="Relation"/>
 
 
       <button
       type="submit"
       ng-click="user.addRelative()">Create Relative</button>
     </form>
+
+    <ui-gmap-google-map center="user.map.center" zoom="user.map.zoom"></ui-gmap-google-map>
   </section>
+
+
+
 
 
 </section>

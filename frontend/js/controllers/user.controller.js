@@ -43,16 +43,21 @@ function UserController($stateParams, UserFactory, $scope) {
     $scope.$apply();
   });
 
+
   function init() {
     controller.relatives = [];
     controller.relativeOptions = ['brother', 'sister', 'mum', 'dad', 'stepdad', 'step great grandmother'];
     controller.lat = undefined;
     controller.lng = undefined;
+    controller.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+
   }
 
   init();
 
 }
+
+
 
 UserController.$inject = ['$stateParams', 'UserFactory', '$scope'];
 

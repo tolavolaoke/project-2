@@ -15,9 +15,33 @@ h3{
 
 }
 
-button{
-  padding: 15px 30px;
-  border: none;
-  background: white;
-  color: blue;
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 6px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
 }
+
+map {
+    height:420px;
+    width:600px;
+}
+.infoWindowContent {
+    font-size:  14px !important;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+h2 {
+    margin-bottom:0;
+    margin-top: 0;
+}
+
+.angular-google-map-container { height: 400px; }
