@@ -28,6 +28,7 @@
   <script src="/js/factories/user.factory.js" charset="utf-8"></script>
   <script src="/js/factories/auth.factory.js" charset="utf-8"></script>
   <script src="/js/factories/relative.factory.js" charset="utf-8"></script>
+  <script src="/js/controllers/user.controller.js" charset="utf-8"></script>
   <script src="/js/controllers/auth.controller.js" charset="utf-8"></script>
   <script src="/js/controllers/relative.controller.js" charset="utf-8"></script>
 
@@ -39,7 +40,7 @@
 
 <body ng-controller="AuthController as auth">
 
-  <h1>The Family Tree App</h1>
+  <h1>Family Tree App</h1>
 
 
   <div ng-if="auth.user">
@@ -59,7 +60,7 @@
   </div>
 
 
-  <section ng-controller="RelativeController as relative" ui-view>
+  <section ng-controller="UserController as user" ui-view>
       <!-- states get rendered here -->
   </section>
 

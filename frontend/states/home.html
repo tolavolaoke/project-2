@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 
+<section ng-controller="AuthController as auth">
+
+
+
 <br>
 <br>
 <ul>
@@ -13,7 +17,7 @@
 <h2>All Relatives: </h2>
 
       <p>To get started click on</p>
-    <a ui-sref="create"><button>Create Relative</button></a>
+    <a ui-sref="create({ firebaseUserId: auth.firebaseUserId })"><button>Create Relative</button></a>
 
     <a ui-sref="edit"><button>Edit Relative</button></a>
 </div>
@@ -38,3 +42,115 @@
       </div>
     </li>
   </ul>
+
+
+  <!-- <form ng-submit="relative.addRelative()">
+
+  <div>
+    <label for="new-relative-firstname">Firstname:</label>
+    <input
+      type="text"
+      id="new-relative-firstname"
+      placeholder="Enter the relatives firstname"
+      ng-model="relative.newRelative.firstname">
+  </div>
+
+  <br>
+
+  <div>
+    <label for="new-relative-surname">Surname:</label>
+    <input
+      type="text"
+      id="new-relative-surname"
+      placeholder="Enter the relatives surname"
+      ng-model="relative.newRelative.surname">
+  </div>
+
+  <br>
+
+  <div>
+    <label for="new-relative-relation">Relation:</label>
+    <input
+      type="text"
+      id="new-relative-relation"
+      placeholder="Enter the relatives relation"
+      ng-model="relative.newRelative.relation">
+  </div>
+
+  <br>
+
+  <div>
+    <label for="new-relative-location">Location</label>
+
+    <select id="new-relative-location" ng-model="relative.newRelative.loaction">
+
+      <option
+        ng-repeat="option in relative.locations"
+        value="{{ option }}">{{ option }}
+
+      </option>
+
+    </select>
+  </div>
+
+  <br>
+
+  <div>
+    type="submit" value="Add Relative">
+  </div>
+
+  </form> -->
+
+  <!---Create Relative Form-------------------------------------------------->
+  <section ng-controller="UserController as user">
+    <form ng-if="auth.user">
+      <input
+      type="text"
+      ng-model="user.relativeFirstName"
+      placeholder="first name">
+
+      <input
+      type="text"
+      ng-model="user.relativeLastName"
+      placeholder="last name">
+
+      <input
+      type="text"
+      ng-model="user.relation"
+      placeholder="relation">
+
+
+      <label
+      for="repeatSelect"> Location: </label>
+      <select
+      name="repeatSelect" id="repeatSelect"
+      ng-model="data.model">
+      <option
+      ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+      <option value="">---Please select---</option> <!-- not selected / blank option -->
+      <option value="">---London---</option>
+      <option value="">---USA---</option>
+      </select>
+
+      <tt>model = {{data.model}}</tt><br/> <!-- where the map will show linked to the option of location -->
+      <!-- NEED TO ADD THIS TO A JS FILE
+      angular.module('ngrepeatSelect', [])
+     .controller('ExampleController', ['$scope', function($scope) {
+     $scope.data = {
+      model: null,
+      availableOptions: [
+      {id: '1', name: 'Option A'},
+      {id: '2', name: 'Option B'},
+      {id: '3', name: 'Option C'}
+    ]
+   };
+}]); -->
+
+      <button
+      type="submit"
+      ng-click="user.addRelative()">Create Relative</button>
+    </form>
+  </section>
+
+
+</section>

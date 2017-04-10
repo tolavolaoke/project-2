@@ -15,6 +15,7 @@ function AuthController($state, UserFactory, AuthFactory) {
     AuthFactory.$createUserWithEmailAndPassword(controller.email, controller.password).then(
       (firebaseUser) => { //arrow function just missing the word function before (firebaseUser)
         console.log('firebaseUser:', firebaseUser);
+        controller.firebaseUserId = firebaseUser.uid;
         resetCredentials();
         UserFactory.createOne(firebaseUser.uid).then(
   (success) => {

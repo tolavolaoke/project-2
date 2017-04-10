@@ -6,7 +6,7 @@ function MainRouter ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
     .state('home', {
-      url: '/:firebaseUserId',
+      url: '/home/:firebaseUserId',
       templateUrl: '/states/home.html'
     })
     .state('signup', {
@@ -18,7 +18,7 @@ function MainRouter ($stateProvider, $urlRouterProvider) {
       templateUrl: '/states/login.html'
     })
     .state('create', { //To create a relative
-      url: '/create',
+      url: '/:firebaseUserId/create',
       templateUrl: '/states/create.html'
     })
     // .state('show', {

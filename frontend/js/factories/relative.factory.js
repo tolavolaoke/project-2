@@ -8,6 +8,13 @@ function RelativeFactory($http) {
       });
     },
 
+    getAllRelatives: function(firebaseUserId) {
+      return $http({
+        method: 'GET',
+        url: `/api/${firebaseUserId}/relatives`
+      });
+    },
+
     getOne: function (relativeId) {
       return $http({
         method: 'GET',

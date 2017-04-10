@@ -7,7 +7,24 @@ function UserFactory($http) {
         url: `/users`,
         headers: {firebaseUserId: firebaseUserId }
       });
+    },
+    
+    getUser: function(firebaseUserId) {
+      return $http({
+        method: 'GET',
+        url: `/users/${firebaseUserId}`
+      });
+    },
+
+    addRelative: function (firebaseUserId, relatives) {
+      return $http({
+        method: 'PATCH',
+        url: `/users/${firebaseUserId}`,
+        data: relatives
+      });
     }
+
+
 
   };
 }

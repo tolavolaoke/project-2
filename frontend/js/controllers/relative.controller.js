@@ -6,7 +6,7 @@ function RelativeController($state, $stateParams, RelativeFactory) {
 
 
   controller.getRelative = function () {
-    var relativeId = $stateParams.relativeId;
+    var relativeId = $stateParams.firebaseUserId;
 
     RelativeFactory.getOne(relativeId).then(
         function success(response) {
@@ -57,9 +57,10 @@ function RelativeController($state, $stateParams, RelativeFactory) {
     controller.allRelatives = [];
     controller.newRelative = {};
     // controller.countries = ['usa', 'uk', 'dubai'];
-    RelativeFactory.getAll().then(
+
+    RelativeFactory.getAll($stateParams.firebaseUserId).then(
       function success(response) {
-        controller.allRelatives = response.data;
+        controller.relatives = response.data;
         console.log('Got Relatives', controller.allRelatives);
       },
       function error(error) {
@@ -71,7 +72,15 @@ function RelativeController($state, $stateParams, RelativeFactory) {
   init();
 }
 
-
+// ```RelativeFactory.getAll($stateParams.firebaseUserId).then(
+//       (success) => {
+//         controller.relatives = success.data.relatives;
+//         console.log('success.data:', success.data);
+//       },
+//       (error) => {
+//         console.warn('Could not get list of relatives', error);
+//       }
+//     );```
 
 
 

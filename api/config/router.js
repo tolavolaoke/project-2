@@ -10,6 +10,8 @@ router.patch('/api/relatives/:id', relativeController.updateRelative);
 router.get('/api/relatives/:id', relativeController.getRelative);
 // add delete router
 router.post('/users', userController.createUser);
+router.patch('/users/:firebaseUserId', userController.updateRelatives);
 
+router.get('/users/:firebaseUserId', userController.getUser);
 
 module.exports = router;
