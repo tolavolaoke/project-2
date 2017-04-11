@@ -96,6 +96,14 @@
 
 <!---Displays Google Map------------------------------------------------------>
     <ui-gmap-google-map center="user.map.center" zoom="user.map.zoom"></ui-gmap-google-map>
+
+<!---Displays Google Marker--------------------------------------------------->
+    <div id="class" ng-repeat="marker in markers | orderBy : 'title'">
+        <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
+</div>
+<div class="">
+
+</div>
   </section>
 
 </section>
