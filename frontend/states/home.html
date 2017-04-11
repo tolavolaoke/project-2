@@ -15,7 +15,7 @@
 
 <h2>All Relatives: </h2>
 <ul>
-  <li ng-repeat="relative in user.relatives">
+  <li class="relativelist" ng-repeat="relative in user.relatives">
     <p><strong>First name:</strong></p>{{ relative.firstName }}
     <p><strong>Last name: </strong></p>{{ relative.lastName }}
     <p><strong>Relation: </strong></p>{{ relative.relation }}
@@ -86,7 +86,7 @@
       <br>
 
 <!---Displays Google Map------------------------------------------------------>
-    <ui-gmap-google-map center="user.map.center" zoom="user.map.zoom">
+    <ui-gmap-google-map center="user.map.center" zoom="user.map.zoom" options="user.map.options">
       <ui-gmap-marker ng-repeat="marker in user.markers" coords="marker.coords" idkey="marker.id">
         </ui-gmap-marker>
     </ui-gmap-google-map>

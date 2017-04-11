@@ -46,3 +46,4 @@ Tola Olaoke
 * http://angular-ui.github.io/angular-google-maps/#!/quickstart
 * https://github.com/kuhnza/angular-google-places-autocomplete
 * http://angular-ui.github.io/angular-google-maps/#!/api/marker
+* https://snazzymaps.com/style/34/neon-world

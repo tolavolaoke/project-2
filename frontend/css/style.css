@@ -23,6 +23,10 @@
 h1{
 color: green;
 }
+.relativelist {
+
+  border: 1px solid #ccc;
+}
 
 form {
     border: 3px solid #f1f1f1;
@@ -59,7 +63,6 @@ select {
     box-sizing: border-box;
     border-radius: 2px;
 }
-
 
 
 .btn1{
@@ -116,6 +119,3 @@ h2 {
 .angular-google-map-container {
   height: 400px;
 }
-
-
-[{"stylers":[{"saturation":100},{"gamma":0.6}]}]

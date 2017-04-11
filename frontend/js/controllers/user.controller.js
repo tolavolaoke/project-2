@@ -79,7 +79,14 @@ function UserController($stateParams, UserFactory, $scope) {
     controller.relativeOptions = ['Brother', 'Sister', 'Mother', 'Father', 'Step father', 'Step mother', 'Grand mother', 'Grand father', 'Daughter', 'Son', 'Step brother', 'Step sister', 'Niece', 'Nephew'];
     controller.lat = undefined;
     controller.lng = undefined;
-    controller.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+    controller.map = {
+      center: { latitude: 45, longitude: -73 },
+      zoom: 8,
+      options: {
+        styles:
+        [{'stylers': [{'saturation': 100},{'gamma': 0.6}]}]
+      }
+    };
     controller.markers = [];
     if ($stateParams.firebaseUserId) controller.getSavedRelatives();
   }
