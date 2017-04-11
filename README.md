@@ -30,6 +30,7 @@ A demo of this app is available on Heroku https://sg-project-3-to.herokuapp.com/
 
 * The server is running with node.js
 * The client side also referred to the frontend of the App is built using AngularJs which controls the states through ui-routing and the logic to create a single page app.
+* The users relative will also be saved onto MongoDB
 * The app is built with HTML, CSS and JavaScript
 * The styling is done by CSS and Bootstrap
 
