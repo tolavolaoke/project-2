@@ -1,9 +1,9 @@
 *{
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif;: 'Lato', sans-serif;
   text-align: center;
   list-style: none;
   box-sizing: border-box;
-  margin: 10px;
+  margin: 5px;
   padding: 10px;
   /*font-weight: 300;*/
 
@@ -33,12 +33,14 @@ h2{
 }
 .relativelist {
   border: 1px solid #ccc;
-  padding: 10px 10px 10px 10px;
+  padding: 10px;
+  margin: 20px;
 }
 /*----CREATE RELATIVE FORM-----------------------------------------------*/
 form {
     border: 3px solid #f1f1f1;
-    padding: 10px;
+    padding: 10px 10px 10px 10px;
+    font-size: 20px;
 }
 
 input{
@@ -47,8 +49,9 @@ input{
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
     border-radius: 2px;
+        font-size: 15px;
 }
 
 input:hover{
@@ -70,21 +73,40 @@ select {
     border-radius: 2px;
 }
 
-
-.btn1{
-  background-color: lightblue;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 25%;
-  border-radius: 2px;
+select:hover{
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
-/*----LOGIN AND SIGN UP BUTTONS ------------------------------------------*/
+select:focus{
+    background-color: white;
+    width: 300px;
+    color: #8bcef1;
+}
+
+.location-input {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 2px;
+
+}
+
+.location-input:hover{
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.location-input:focus{
+    background-color: white;
+    width: 300px;
+    color: #8bcef1;
+}
+
 button {
-    background-color: #4CAF50;
+    background-color: green;
+    text-decoration: none;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -92,10 +114,41 @@ button {
     cursor: pointer;
     width: 50%;
     border-radius: 2px;
+    font-family: 'Lato', sans-serif;: sans-serif;
+    font-size: 20px;
 }
 
 button:hover {
     opacity: 0.8;
+}
+
+/*----LOGIN, SIGN UP AND SIGN OUT BUTTON----------------------------------*/
+/*.btn1{
+  background-color: white;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid;
+  border-color: green;
+  cursor: pointer;
+  width: 25%;
+  border-radius: 2px;
+  font-family: 'Lato', sans-serif;: sans-serif;
+  font-size: 15px;
+}*/
+.btn1 {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
 }
 
 /* ----GOOGLE MAPS--------------------------------------------------------*/

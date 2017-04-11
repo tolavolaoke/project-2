@@ -13,7 +13,7 @@
 <!---Displays the Relative and Objetcs------------------------------------->
 <div ng-if="auth.user">
 
-<h2>All Relatives: </h2>
+<h2>Your Family Tree: </h2>
 <ul>
   <li class="relativelist" ng-repeat="relative in user.relatives">
     <p><strong>First name:</strong></p>{{ relative.firstName }}
@@ -69,7 +69,7 @@
       <br>
      <!-- <label
       for="Location"> Location: </label> -->
-      <input
+      <input class="location-input"
       type="text" gm-places-autocomplete
       ng-model="user.autocomplete" style="width: 300px;"
       placeholder="Enter your relatives Location here"/>
@@ -83,6 +83,8 @@
       <br>
 
 <!---Displays Google Map------------------------------------------------------>
+<h2>Your Relatives are located here: </h2>
+
     <ui-gmap-google-map center="user.map.center" zoom="user.map.zoom" options="user.map.options">
       <ui-gmap-marker ng-repeat="marker in user.markers" coords="marker.coords" idkey="marker.id">
         </ui-gmap-marker>

@@ -33,7 +33,6 @@ function RelativeController($state, $stateParams, RelativeFactory) {
   };
 
 
-
   controller.editRelative = function (RelativeId) {
     $state.go('edit', { RelativeId: RelativeId });
   };
