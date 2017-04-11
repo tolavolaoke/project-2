@@ -31,20 +31,11 @@
 
 
 
-<!---Edit Relative Form------------------------------------------------------>
+<!---                 ------------------------------------------------------>
   <ul>
     <li class="relative" ng-repeat="relative in relative.allRelatives">
       <div>
-        <span>Name: </span>
-        <a ui-sref="show({relativeId: relative._id})">{{ relative.firstName }}</a>
 
-        <button
-        type="button"
-        ng-click="relative.editRelative(relative._id)">edit relative</button>
-
-        <button
-        type="button"
-        ng-click="relative.deleteRelative(relative._id)">delete relative</button>
 
       </div>
     </li>
@@ -100,10 +91,7 @@
         </ui-gmap-marker>
     </ui-gmap-google-map>
 
-<!---Displays Google Marker--------------------------------------------------->
-    <!-- <div id="class" ng-repeat="marker in markers | orderBy : 'title'">
-        <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a> -->
-<!-- </div> -->
+
 <div class="">
 
 </div>
