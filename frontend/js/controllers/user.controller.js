@@ -76,7 +76,7 @@ function UserController($stateParams, UserFactory, $scope) {
 // INIT FUNCTIONS -----------------------------------------------------
   function init() {
     controller.relatives = [];
-    controller.relativeOptions = ['brother', 'sister', 'mother', 'father', 'step father', 'step mother', 'grand mother', 'grand father', 'daughter', 'son', 'step brother', 'step sister'];
+    controller.relativeOptions = ['Brother', 'Sister', 'Mother', 'Father', 'Step father', 'Step mother', 'Grand mother', 'Grand father', 'Daughter', 'Son', 'Step brother', 'Step sister', 'Niece', 'Nephew'];
     controller.lat = undefined;
     controller.lng = undefined;
     controller.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
