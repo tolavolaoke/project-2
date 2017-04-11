@@ -16,8 +16,9 @@ A demo of this app is available on Heroku https://sg-project-3-to.herokuapp.com/
 
 * Clone the repository
 * In the command line npm install
-    * This will install all the necessary dependencies stored in the package.json file
+    * This will install all the necessary dependencies in the package.json file
 * To start up the server input in the terminal npm run nodemon.
+
 
 ##Functions
 
