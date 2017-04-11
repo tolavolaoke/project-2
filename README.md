@@ -36,8 +36,10 @@ A demo of this app is available on Heroku https://sg-project-3-to.herokuapp.com/
 * The styling is done by CSS and Bootstrap
 
 ##Author
+
 Tola Olaoke
 
 ##Useful Resources
+
 * w3Schools
 * Angular Docs
