@@ -18,3 +18,10 @@ A demo of this app is available on Heroku https://sg-project-3-to.herokuapp.com/
 * In the command line npm install
     * This will install all the necessary dependencies stored in the package.json file
 * To start up the server input in the terminal npm run nodemon.
+
+###Functions
+
+* This project uses Firebase to create new users, signing in and signing out.
+* The user can create and update a list of relatives by using a form where they can input the following first name, last name, relation and location.
+* The user can select a location using the dropdown option which provides a list of places from the Google Places API.
+* The user can view the location of the relative saved onto the Google Maps.
