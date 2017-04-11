@@ -43,8 +43,6 @@
 
 </head>
 
-
-
 <body ng-controller="AuthController as auth">
 
   <h1>Family Tree App</h1>
@@ -57,6 +55,9 @@
     <p>
     <button class="btn1"><a href="#" ng-click="auth.signOut()">Sign out</a></button>
     </p>
+    <p>
+    <button class="btn1"><a href="#" ng-click="auth.signOut()"> Help</a></button>
+    </p>
   </div>
 
   <div ng-if="!auth.user">
@@ -65,6 +66,9 @@
 
     <button class="btn1"><a ui-sref="signup">Signup</a></button>
   </div>
+
+
+  <img src="/images/tree.jpg" alt="">
 
 
   <section ng-controller="UserController as user" ui-view>

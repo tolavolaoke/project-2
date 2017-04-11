@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 
 <section ng-controller="AuthController as auth" ng-init="user.getSavedRelatives()">
-<br>
-<br>
+
 <ul>
     <li ng-repeat="relative in relative.allRelatives">
     </li>
@@ -16,13 +15,12 @@
 <h2>Your Family Tree: </h2>
 <ul>
   <li class="relativelist" ng-repeat="relative in user.relatives">
-    <p><strong>First name:</strong></p>{{ relative.firstName }}
-    <p><strong>Last name: </strong></p>{{ relative.lastName }}
-    <p><strong>Relation: </strong></p>{{ relative.relation }}
-    <p><strong>Location: </strong></p>{{ relative.location }}
+    <p><strong>First name:</strong>{{ relative.firstName }}</p>
+    <p><strong>Last name: </strong>{{ relative.lastName }}</p>
+    <p><strong>Relation: </strong>{{ relative.relation }}</p>
+    <p><strong>Location: </strong>{{ relative.location }}</p>
   </li>
 </ul>
-      <p>Instructions:</p>
 
 </div>
 
@@ -81,10 +79,9 @@
     </form>
 
       <br>
-
+      <br>
 <!---Displays Google Map------------------------------------------------------>
 <h2>Your Relatives are located here: </h2>
-
     <ui-gmap-google-map center="user.map.center" zoom="user.map.zoom" options="user.map.options">
       <ui-gmap-marker ng-repeat="marker in user.markers" coords="marker.coords" idkey="marker.id">
         </ui-gmap-marker>
