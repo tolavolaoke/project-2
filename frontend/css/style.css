@@ -37,6 +37,7 @@ input{
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    border-radius: 2px;
 }
 
 .btn1{
@@ -47,6 +48,7 @@ input{
   border: none;
   cursor: pointer;
   width: 25%;
+  border-radius: 2px;
 }
 
 button {
@@ -57,6 +59,7 @@ button {
     border: none;
     cursor: pointer;
     width: 50%;
+    border-radius: 2px;
 }
 
 button:hover {
