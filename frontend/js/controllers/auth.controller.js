@@ -40,9 +40,9 @@ function AuthController($state, UserFactory, AuthFactory) {
   controller.signIn = () => {
     controller.error = null;
     AuthFactory.$signInWithEmailAndPassword(controller.email, controller.password).then(
-      () => {
+      (firebaseUser) => {
         resetCredentials();
-        $state.go('home');
+        $state.go('home', {firebaseUserId: firebaseUser.uid});
       },
 
     (error) => { //another arrow function

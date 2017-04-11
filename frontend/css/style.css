@@ -3,9 +3,9 @@
   text-align: center;
   list-style: none;
   box-sizing: border-box;
-margin: 0;
-padding: 0;
-font-weight: 300;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
 
 }
 /*------------------------------------------------------------------------*/
@@ -30,16 +30,14 @@ form {
 }
 
 
-form input:hover{
+input:hover{
     background-color: rgba(255, 255, 255, 0.4);
 }
-form input:focus{
+input:focus{
     background-color: white;
     width: 300px;
     color: #8bcef1;
 }
-
-
 
 
 input{
@@ -106,3 +104,6 @@ h2 {
 .angular-google-map-container {
   height: 400px;
 }
+
+
+[{"stylers":[{"saturation":100},{"gamma":0.6}]}]
