@@ -4,7 +4,7 @@
 
 Synopsis
 
-This App allows users to create an account and browse through movie collections ranging from those in theatre to movies by category, and gives users the ability to look up similar movies.
+This App allows users to create an account and create a list of relatives and gives users the ability to locate them on google maps.
 
 This project is a MEAN app that uses a rMVC approach and utilises HTTP requests. It involved Node/Express server-side, and AngularJS client-side and an external API to create a single page application.
 
