@@ -55,15 +55,15 @@
         	Welcome {{ auth.user.email }}!
     </strong> </p>
     <p>
-    <button><a href="#" ng-click="auth.signOut()">Sign out</a></button>
+    <button class="btn1"><a href="#" ng-click="auth.signOut()">Sign out</a></button>
     </p>
   </div>
 
   <div ng-if="!auth.user">
-    <p>Welcome new person!</p>
-    <button><a ui-sref="login">Login</a></button>
+    <p>Welcome! Please sign up or log in.</p>
+    <button class="btn1"><a ui-sref="login">Login</a></button>
 
-    <button><a ui-sref="signup">Signup</a></button>
+    <button class="btn1"><a ui-sref="signup">Signup</a></button>
   </div>
 
 
