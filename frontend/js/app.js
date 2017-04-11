@@ -21,10 +21,7 @@ function MainRouter ($stateProvider, $urlRouterProvider) {
       url: '/:firebaseUserId/create',
       templateUrl: '/states/create.html'
     })
-    // .state('show', {
-    //   url: '/show',
-    //   templateUrl: '/states/show.html'
-    // })
+
     .state('edit', {
       url: '/edit',
       templateUrl: '/states/edit.html'

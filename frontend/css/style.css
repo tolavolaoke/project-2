@@ -3,10 +3,18 @@
   text-align: center;
   list-style: none;
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-weight: 300;
+  margin: 10px;
+  padding: 10px;
+  /*font-weight: 300;*/
 
+}
+p{
+font-weight: bold;
+
+}
+h1{
+color: green;
+font-weight: bold;
 }
 /*------------------------------------------------------------------------*/
 
@@ -20,29 +28,18 @@
 
 
 /*---------------------------------------------------------------------*/
-h1{
-color: green;
+h2{
+
 }
 .relativelist {
-
   border: 1px solid #ccc;
+  padding: 10px 10px 10px 10px;
 }
-
+/*----CREATE RELATIVE FORM-----------------------------------------------*/
 form {
     border: 3px solid #f1f1f1;
     padding: 10px;
 }
-
-
-input:hover{
-    background-color: rgba(255, 255, 255, 0.4);
-}
-input:focus{
-    background-color: white;
-    width: 300px;
-    color: #8bcef1;
-}
-
 
 input{
     width: 50%;
@@ -52,6 +49,15 @@ input{
     border: 1px solid #ccc;
     box-sizing: border-box;
     border-radius: 2px;
+}
+
+input:hover{
+    background-color: rgba(255, 255, 255, 0.4);
+}
+input:focus{
+    background-color: white;
+    width: 300px;
+    color: #8bcef1;
 }
 
 select {
@@ -76,7 +82,7 @@ select {
   border-radius: 2px;
 }
 
-/*----log in and sign up buttons----*/
+/*----LOGIN AND SIGN UP BUTTONS ------------------------------------------*/
 button {
     background-color: #4CAF50;
     color: white;
@@ -91,13 +97,6 @@ button {
 button:hover {
     opacity: 0.8;
 }
-
-
-
-.container {
-    padding: 16px;
-}
-
 
 /* ----GOOGLE MAPS--------------------------------------------------------*/
 map {
@@ -118,4 +117,5 @@ h2 {
 /* ----GOOGLE MAPS--------------------------------------------------------*/
 .angular-google-map-container {
   height: 400px;
+  width:
 }
