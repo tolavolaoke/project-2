@@ -71,15 +71,6 @@ function RelativeController($state, $stateParams, RelativeFactory) {
   init();
 }
 
-// ```RelativeFactory.getAll($stateParams.firebaseUserId).then(
-//       (success) => {
-//         controller.relatives = success.data.relatives;
-//         console.log('success.data:', success.data);
-//       },
-//       (error) => {
-//         console.warn('Could not get list of relatives', error);
-//       }
-//     );```
 
 
 
