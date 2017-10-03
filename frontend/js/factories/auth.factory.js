@@ -3,16 +3,15 @@
 function AuthRun() {
 
   // Initialize Firebase
+  
   var config = {
-    apiKey: 'AIzaSyDFM2cZsHoqLdcm1z3NSrXLKb1H4Kvy-58',
-    authDomain: 'sg-project-3-1491399141339.firebaseapp.com',
-    databaseURL: 'https://sg-project-3-1491399141339.firebaseio.com',
-    projectId: 'sg-project-3-1491399141339',
-    storageBucket: 'sg-project-3-1491399141339.appspot.com',
-    messagingSenderId: '1093614402207'
+    apiKey: "AIzaSyBl3JQydHJlsGyxA-hOlxh_xwviK-zqTgk",
+    authDomain: "sg-project-3-cf32d.firebaseapp.com",
+    databaseURL: "https://sg-project-3-cf32d.firebaseio.com",
+    projectId: "sg-project-3-cf32d",
+    storageBucket: "sg-project-3-cf32d.appspot.com",
+    messagingSenderId: "645687905138"
   };
-
-
   firebase.initializeApp(config);
 }
 
